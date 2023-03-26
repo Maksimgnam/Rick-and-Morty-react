@@ -1,0 +1,57 @@
+.locationContainer {
+    width: 100%;
+    height: 660vh;
+    background-color: #000000;
+    position: relative;
+    top: -52px;
+
+
+}
+
+.loc__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 270px;
+}
+
+
+
+
+.location__card {
+    min-width: 550px;
+    height: 170px;
+    background-color: black;
+    box-shadow: 0 0 10px #449A72;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+.Location__h1 {
+    position: relative;
+    top: 10px;
+    font-size: 40px;
+
+}
+
+.loc__text {
+    position: relative;
+    top: 20px;
+    left: 12px;
+}
+
+.loc__name {
+    text-align: center;
+    font-size: 30px;
+}
+
+.loc__li {
+    font-size: 26px;
+}
+
+.loc__pagination {
+    position: relative;
+    top: 4370px;
+}
