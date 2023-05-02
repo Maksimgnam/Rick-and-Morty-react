@@ -4,6 +4,8 @@ import Rick from './Rick/Rick';
 import Location from './Location/Location';
 import Main from './Main/Main';
 import Header from './Header/Header';
+import Episodes from './Episodes/Episodes';
+import MyList from './MyList/MyList';
 
 
 
@@ -20,6 +22,8 @@ function App() {
 
       <Rick />
       <Location />
+      <Episodes />
+      <MyList />
 
     </div>
   );

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Rick.css'
 
+import GenderFilter from './GenderFilter/Gender';
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -10,6 +12,9 @@ function RickAndMorty() {
     const [filter, setFilter] = useState('');
 
     const [page, setPage] = useState(1)
+    const [gender, setGender] = useState("");
+    const [species, setSpecies] = useState("");
+    const [status, setStatus] = useState("");
 
 
 
@@ -21,7 +26,8 @@ function RickAndMorty() {
 
 
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+        fetch(`https://rickandmortyapi.com/api/character/?page=${page}&gender=${gender}&species=${species}&status=${status}`)
+
             .then(response => response.json())
             .then(data => {
                 setCharacters(data.results)
@@ -31,7 +37,7 @@ function RickAndMorty() {
             }
             )
             .catch(error => console.error(error));
-    }, [page]);
+    }, [page, gender, species, status]);
 
     const filteredCharacters = characters.filter(character =>
         character.name.toLowerCase().includes(filter.toLowerCase())
@@ -48,10 +54,29 @@ function RickAndMorty() {
         setPage(page + 1)
     }
 
+
+
+    const changeGender = (slectedGender) => {
+        setGender(slectedGender)
+    }
+    const changeSpecies = (slectedSpecies) => {
+        setSpecies(slectedSpecies)
+    }
+
+    const changeStatus = (slectedStatus) => {
+        setStatus(slectedStatus)
+    }
+
+
+
+
+
+
     return (
         <div className='characterContainer'>
 
             <h1 data-aos='fade-up'>Characters</h1>
+
             <input
                 type="text"
                 placeholder="Filter by name"
@@ -61,6 +86,11 @@ function RickAndMorty() {
 
                 data-aos='fade-up'
             />
+            <div className="Filters">
+                <GenderFilter changeGender={changeGender} changeSpecies={changeSpecies} changeStatus={changeStatus} />
+
+
+            </div>
 
             {filteredCharacters.length > 0 ? (
                 <div className='List'>
@@ -90,7 +120,7 @@ function RickAndMorty() {
                 <p className='no__cards'>No characters found...</p>
             )}
 
-            <div className='pagination' data-aos='fade-up'>
+            <div className='pagination' >
                 <button onClick={PrevPage} disabled={page === 1} className='PagBtn'>Prev</button>
                 <div className='pageCount'>{`Page ${page}`}</div>
                 <button onClick={NextPage} disabled={page === 41} className="PagBtn">Next</button>

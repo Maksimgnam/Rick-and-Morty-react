@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import LocationFilter from './LocationFilter/LocationFilter';
+
 
 
 
@@ -18,12 +20,16 @@ function Location() {
 
     const [page, setPage] = useState(1)
 
+    const [type, setType] = useState('');
+    const [dimension, setDimension] = useState('');
+
+
     useEffect(() => {
         AOS.init({ duration: 2000 })
     }, [])
 
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/location?page=${page}`)
+        fetch(`https://rickandmortyapi.com/api/location?page=${page}&type=${type}&dimension=${dimension}`)
             .then(response => response.json())
             .then(data => {
                 setLocations(data.results)
@@ -33,7 +39,7 @@ function Location() {
             }
             )
             .catch(error => console.error(error));
-    }, [page]);
+    }, [page, type, dimension]);
 
     const filteredLocations = locations.filter(location =>
         location.name.toLowerCase().includes(filter.toLowerCase())
@@ -46,6 +52,12 @@ function Location() {
 
     function NextPage() {
         setPage(page + 1)
+    }
+    const changeType = (slectedType) => {
+        setType(slectedType)
+    }
+    const changeDimension = (slectedDimension) => {
+        setDimension(slectedDimension)
     }
 
 
@@ -60,6 +72,11 @@ function Location() {
                 onChange={event => setFilter(event.target.value)}
                 className='character__input'
             />
+
+            <div className="Filter">
+                <LocationFilter changeType={changeType} changeDimension={changeDimension} />
+
+            </div>
 
 
             {filteredLocations.length > 0 ? (

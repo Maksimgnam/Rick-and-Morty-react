@@ -1,0 +1,32 @@
+.EpisodeContainer {
+    width: 100%;
+    height: 600vh;
+
+
+    position: relative;
+    top: -52px;
+
+
+
+}
+
+
+.episod__list {
+    width: 50%;
+
+    position: relative;
+
+    left: 380px;
+    top: 50px;
+
+
+}
+
+.EpisodePag {
+
+    display: flex;
+    position: relative;
+
+
+
+}

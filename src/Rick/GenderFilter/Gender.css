@@ -1,0 +1,35 @@
+.Filter {
+    width: 350px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: -140px;
+    left: 30px;
+}
+
+select {
+    width: 100px;
+    height: 35px;
+    border: none;
+    box-shadow: 0 0 10px #449A72;
+
+    background-color: black;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    color: #449A72;
+    border-radius: 5px;
+
+}
+
+.locatonFilter {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 25px;
+    left: -30px;
+}
