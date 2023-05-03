@@ -5,24 +5,7 @@ import "./Gender.css";
 function GenderFilter({ changeGender, changeSpecies, changeStatus }) {
     return (
         <div className="Filter">
-            {/* <label>
-                Male
-                <input
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    onChange={(e) => changeGender(e.target.value)}
-                />
-            </label>
-            <label>
-                Female
-                <input
-                    type="radio"
-                    name="gender"
-                    value="female"
-                    onChange={(e) => changeGender(e.target.value)}
-                />
-            </label> */}
+
 
 
             <select id="gender" name="gender" onChange={(e) => changeGender(e.target.value)}>

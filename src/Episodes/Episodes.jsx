@@ -96,7 +96,7 @@ function Episodes() {
                 </div>
 
             ) : (
-                <p className='no__cards'>No locations found...</p>
+                <p className='no__cards'>No episodes found...</p>
             )}
 
 
