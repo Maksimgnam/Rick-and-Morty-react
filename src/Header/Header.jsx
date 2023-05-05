@@ -7,10 +7,10 @@ function Header() {
             <Logo />
 
             <nav className="navbar">
-                <a href="">Characters</a>
-                <a href="">Locations</a>
-                <a href="">Episods</a>
-                <a href="">My list</a>
+                <a href="#Characters">Characters</a>
+                <a href="#Location">Locations</a>
+                <a href="#Episode">Episods</a>
+                <a href="#MyList">My list</a>
 
 
             </nav>

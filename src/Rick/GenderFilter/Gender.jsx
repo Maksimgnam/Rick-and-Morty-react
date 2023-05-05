@@ -23,6 +23,15 @@ function GenderFilter({ changeGender, changeSpecies, changeStatus }) {
 
                 <option value="human">Human</option>
                 <option value="alien">Alien</option>
+                <option value="unknown">Unknown</option>
+                <option value="animal">Animal</option>
+                <option value="humanoid">Humanoid</option>
+                <option value="mythological">Mythological</option>
+                <option value="poopybutthole">Poopybutthole</option>
+                <option value="disease">Disease</option>
+                <option value="robot">Robot</option>
+                <option value="cronenberg">Cronenberg</option>
+                <option value="planet">Planet</option>
 
             </select>
             <select id="status" name="status" onChange={(e) => changeStatus(e.target.value)}>

@@ -73,7 +73,7 @@ function RickAndMorty() {
 
 
     return (
-        <div className='characterContainer'>
+        <div className='characterContainer' id='Characters'>
 
             <h1 data-aos='fade-up'>Characters</h1>
 

@@ -10,11 +10,13 @@ function MyList() {
 
 
         if (text.trim() !== "") {
-            setWatchCard([...watchCard, text])
-            setText('')
+
+            const newWatchCard = { text: text, };
+            setWatchCard([...watchCard, newWatchCard]);
+            setText('');
         }
 
-        const now = new Date();
+
     }
 
     const deleteWatchCard = (index) => {
@@ -23,7 +25,7 @@ function MyList() {
         setWatchCard(newWatchCrad)
     }
     return (
-        <div className='MyList'>
+        <div className='MyList' id='MyList'>
             <h1 >My list</h1>
 
             <div className="InputCont" data-aos='fade-up'>
@@ -37,7 +39,9 @@ function MyList() {
                 {watchCard.map((watch, index) => (
                     <div className="watchCard" key={index} data-aos='fade-up'>
                         <p>{watch}</p>
-                        <p></p>
+
+
+
 
                         <button className='delete' onClick={() => deleteWatchCard(index)}>Delete</button>
                     </div>

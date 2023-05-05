@@ -63,7 +63,7 @@ function Location() {
 
     return (
 
-        <div className='locationContainer'>
+        <div className='locationContainer' id='Location'>
             <h1 className='Location__h1'>Location</h1>
             <input
                 type="text"

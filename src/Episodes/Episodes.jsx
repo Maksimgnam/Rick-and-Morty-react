@@ -53,7 +53,7 @@ function Episodes() {
 
     return (
 
-        <div className='EpisodeContainer'>
+        <div className='EpisodeContainer' id='Episode'>
             <h1 className='Episode__h1'>Episodes</h1>
             <input
                 type="text"
